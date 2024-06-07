@@ -17,7 +17,7 @@ In this project, there is only a notebook use for brief reference and maintain c
 1. [Datasets Used](#1-Datasets-Used)
 2. [Exploratory Data Analysis & Data Cleaning](#2-Exploratory-Data-Analysis-&-Data-Cleaning)
 3. [Modeling & Evaluation](#3-Modeling-&-Evaluation)
-4. [Conclusion and Recommendations](#4-Conclusion-and-Recommendations)
+4. [Conclusion](#4-Conclusion)
 5. [Python Library Used](#5-Python-Library-Used)
 6. [Link to Presentation](#6-Presentation)
 
@@ -32,31 +32,31 @@ Following the features (as mentioned in ) EDA is done to find correlation betwee
 * Maternal with obesity
 * Exhibit any of teh five comorbid
 * Category CAT 2B and above (High risk patient)
+The correlation done including relationship:
+* Comorbid type and percentage of submission
+* Distribution of age of patient admitted/registered
+* Vaccine consumed distribution from the patient admitted/registered
 
 ### 3. Modelling & Evaluation
-Several classifier models were developed, where the hyperparameters were tuned for each model to obtain the best cross-validated AUC scores,accuracy and F1 score. Because there were imbalances in the data collected in train data (25% of overall data after train test split) an over-sampling method known as SMOTE (Synthetic Minority Over-sampling Technique) was adopted. It was also the reason for optimizing the models on AUC scores instead of accuracy. Comparing the AUC and recall scores, the production model selected was the Gradient Boosting Classifier model. Comparing the train and test accuracy scores of the selected model, there was evidence of slight overfitting for logistic regression model. It is also found that all model perform better as new feature column introduced where:
+Several classifier models were developed, where the hyperparameters were tuned for each model to obtain the best accuracy and F1 score. Because the subject (healthcare) really heavily on judgment of medical officer, thus careful consideration done was to dig up literature review of past similar case of analysis involving health dataset. From the literature review, few model were identified to be commonly used in this classification area. Afterwards, the evaluation metrics were done to be compared with the academic papers result as a matter of comparison.
 
-Models used for attributes input features prediction:
-- Logistic Regression
-- Random Forest Classifier
-- Gradient Boost Classifier
-
-Models used for text input features prediction:
-- Multinomial Naive Bayes
-
-Evaluation Metrics used:
-- ROC-AUC score
+Models used for attributes classification:
+- SVM
+- Naive Bayes
+- Random Forest
+- Decision Tree
+  
+Evaluation Metrics includes:
 - F1-Score
 - Recall
 - Precision
-- Accuracy
 
-### 4. Conclusion & Recommendation
-1. In multiclass classification prediction, gradient bossting classifier perform the best with F1 score of 1 .
-2. For binary classification prediction using text input, Multinomial Naive Bayes perform at moderately average.
-3. Increasing bag of word could help increasing Multinomial performance but computational heavy.
-4. For future work, is a possibility to combine multiclass approach which use attributes and combine with bag of words to further increase model performance to predict rating.
-5. This is shown in recommender system too as more variance introduce(attributes introduce), more relevant restaurant are recommended.
+### 4. Conclusion
+1. Comorbid respiratory has significant relation for plan admit decision
+2. The model achieve f1 score of 100% for every model if respiratory included in the model training
+3. SVM performs the best with 10 folds cross-validation
+4. SVM achieve the highest accuracy compared to other models at 10 fold cross-validation (after tuning)
+5. SVM > Naive Bayes Classifier > Random Forest > Decision Tree
 
 ### 5. Python Library Used
 - Pandas
