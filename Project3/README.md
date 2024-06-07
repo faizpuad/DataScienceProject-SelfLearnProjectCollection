@@ -38,7 +38,7 @@ The correlation done including relationship:
 * Vaccine consumed distribution from the patient admitted/registered
 
 ### 3. Modelling & Evaluation
-Several classifier models were developed, where the hyperparameters were tuned for each model to obtain the best accuracy and F1 score. Because the subject (healthcare) really heavily on judgment of medical officer, thus careful consideration done was to dig up literature review of past similar case of analysis involving health dataset. From the literature review, few model were identified to be commonly used in this classification area. Afterwards, the evaluation metrics were done to be compared with the academic papers result as a matter of comparison.
+Because the subject (healthcare) really heavily on judgment of medical officer, thus careful consideration done was to dig up literature review of past similar case of analysis involving health dataset. From the literature review, few model were identified to be commonly used in this classification area. Afterwards, the evaluation metrics were done to be compared with the academic papers result as a matter of comparison. Refer Project3_FAIZPUAD_samplecode.pdf for said literature review done.
 
 Models used for attributes classification:
 - SVM
@@ -63,14 +63,7 @@ Evaluation Metrics includes:
 - Numpy
 - Seaborn
 - Matplotlib
-- Pickle
-- Joblib
 - Sklearn
-- Imblearn
-- nltk
-- os
-- json
-- scipy
 
 ### 6. Presentation
 https://express.adobe.com/page/8Vg3Vq9L8DF5t/
