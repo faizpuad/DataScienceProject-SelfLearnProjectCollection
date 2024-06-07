@@ -43,7 +43,6 @@ In this section, we undergo studying, understanding and feature engineering of t
 
 ### 3. Modelling & Evaluation
 Several classifier models were developed, where the hyperparameters were tuned for each model to obtain the best cross-validated AUC scores,accuracy and F1 score. Because there were imbalances in the data collected in train data (25% of overall data after train test split) an over-sampling method known as SMOTE (Synthetic Minority Over-sampling Technique) was adopted. It was also the reason for optimizing the models on AUC scores instead of accuracy. Comparing the AUC and recall scores, the production model selected was the Gradient Boosting Classifier model. Comparing the train and test accuracy scores of the selected model, there was evidence of slight overfitting for logistic regression model. It is also found that all model perform better as new feature column introduced where:
--
 
 Models used for attributes input features prediction:
 - Logistic Regression
